@@ -16,9 +16,6 @@ cd build
 cmake .. \
     -DQE_ENABLE_MPI=ON \
     -DQE_ENABLE_OPENMP=ON \
-    -DQE_ENABLE_SCALAPACK=ON \
-    -DQE_ENABLE_ELPA=ON \
-    -DQE_ENABLE_HDF5=ON \
     -DQE_ENABLE_TEST=ON \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
     -DMPIEXEC_PREFLAGS="--oversubscribe;--bind-to;none;-mca;plm;isolated" \
@@ -44,4 +41,4 @@ else
     ctest -L "unit" --output-on-failure  || true
 fi
 
-make install
+make compile
